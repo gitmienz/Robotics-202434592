@@ -1,0 +1,5 @@
+PWM : Pulse Width Modulation 통신채널
+
+
+IMU : 관성측정, 가속도, 자이로스콥, 나침반
+
