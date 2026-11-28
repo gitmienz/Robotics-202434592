@@ -1,0 +1,57 @@
+261128 필기
+
+피지컬 인공지능 유형 (amu)
+
+고수준(high-level) 로봇 자율주행 흐름
+
+인지 -> 계획 -> 행동
+
+인지
+- 데이터 수집, 전처리, 주변환경, 로봇 위치 파악
+
+계획
+- 실시간 계획 갱신
+
+행동
+- 이동 명령 생성, 방향 제어, 실시간 보정, 로봇 동작 제어
+
+GNSS
+-위성 신호를 이용해 절대 위치 및 속도 제공
+
+ENCODER
+- 바퀴의 회전량을 측정하여 주행 거리 및 차량 속도 추정
+
+LIDAR
+- 레이저 기반 거리 측정
+- 단순히 측정한 거리에 점을 찍음 매핑아님
+- 2D, 3D 잇음
+
+-----
+
+gazebo
+
+ros2 launch turtlebot3_gazebo turtlebot3_dqn_stage1.launch.py 
+ros2 run turtlebot3_teleop teleop_keyboard
+
+ros2 run 3_lidar simple
+
+
+Euler vs. Quaternion
+
+Euler: (roll, pitch, yaw)
+roll : x 축 회전 (옆구르기)
+pitch: y 축 회전 (앞구르기)
+yaw: z축 회전 (코끼리코)
+
+겹치는 순간 방향 하나를 상실하게되는 짐벌락 현상 발생
+
+Quaternion (x,y,z,w)
+
+w + xi + yj + zk
+x^2 + y^2 + z^2 + w^2 = 1이 되야함
+
+q = msg.pose.pose.orientation
+quat = [q.x, q.y, q.z, q.w]
+회전량, 벡터
+
+
